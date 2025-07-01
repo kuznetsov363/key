@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Key Maker Bonus Tester</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    input, button { margin: 4px; }
+    #log { white-space: pre-wrap; border: 1px solid #ccc; padding: 10px; height: 250px; overflow-y: auto; }
+  </style>
+</head>
+<body>
+  <h1>Key Maker Bonus API Tester</h1>
+
+  <section>
+    <h2>1. Регистрация / Логин</h2>
+    <input type="text" id="phone" placeholder="Телефон 79991234567" />
+    <button onclick="register()">Register</button>
+    <button onclick="login()">Login</button>
+    <p>Token: <span id="token"></span></p>
+  </section>
+
+  <section>
+    <h2>2. Профиль</h2>
+    <button onclick="getProfile()">Get Profile</button>
+    <button onclick="getTransactions()">Bonus History</button>
+  </section>
+
+  <section>
+    <h2>3. Заказы</h2>
+    <button onclick="createOrder()">Create Order</button><br />
+    Order ID: <input id="orderId" size="4" /> Сумма ₽: <input id="amount" size="4" /> Бонусов списать: <input id="bonusSpend" size="4" value="0" />
+    <button onclick="closeOrder()">Close Order</button><br />
+    <button onclick="listOrders()">List Orders</button>
+  </section>
+
+  <h2>Log</h2>
+  <div id="log"></div>
+
+  <script>
+    const apiBase = ""; // same origin
+
+    function log(msg) {
+      const el = document.getElementById('log');
+      el.textContent += `\n${msg}`;
+      el.scrollTop = el.scrollHeight;
+    }
+
+    function setToken(tok) {
+      localStorage.setItem('token', tok);
+      document.getElementById('token').textContent = tok.slice(0, 40) + '...';
+    }
+
+    function getHeaders() {
+      const token = localStorage.getItem('token');
+      return token ? { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' } : { 'Content-Type': 'application/json' };
+    }
+
+    async function register() {
+      const phone = document.getElementById('phone').value.trim();
+      const res = await fetch(apiBase + '/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone })
+      });
+      const data = await res.json();
+      if (res.ok) { setToken(data.access_token); log('Registered OK'); }
+      else { log('Register error: ' + JSON.stringify(data)); }
+    }
+
+    async function login() {
+      const phone = document.getElementById('phone').value.trim();
+      const res = await fetch(apiBase + '/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone })
+      });
+      const data = await res.json();
+      if (res.ok) { setToken(data.access_token); log('Logged in'); }
+      else { log('Login error: ' + JSON.stringify(data)); }
+    }
+
+    async function getProfile() {
+      const res = await fetch(apiBase + '/profile', { headers: getHeaders() });
+      log('Profile: ' + JSON.stringify(await res.json()));
+    }
+
+    async function getTransactions() {
+      const res = await fetch(apiBase + '/profile/transactions', { headers: getHeaders() });
+      log('Transactions: ' + JSON.stringify(await res.json()));
+    }
+
+    async function createOrder() {
+      const res = await fetch(apiBase + '/orders', {
+        method: 'POST',
+        headers: getHeaders(),
+        body: JSON.stringify({ amount_rub: 0 })
+      });
+      const data = await res.json();
+      log('Order created: ' + JSON.stringify(data));
+      document.getElementById('orderId').value = data.id;
+    }
+
+    async function closeOrder() {
+      const id = document.getElementById('orderId').value;
+      const amount = parseInt(document.getElementById('amount').value || '0');
+      const spend = parseInt(document.getElementById('bonusSpend').value || '0');
+      const res = await fetch(apiBase + `/orders/${id}/close`, {
+        method: 'POST',
+        headers: getHeaders(),
+        body: JSON.stringify({ amount_rub: amount, bonus_to_spend: spend })
+      });
+      log('Close order resp: ' + JSON.stringify(await res.json()));
+    }
+
+    async function listOrders() {
+      const res = await fetch(apiBase + '/orders', { headers: getHeaders() });
+      log('Orders: ' + JSON.stringify(await res.json()));
+    }
+  </script>
+</body>
+</html>
