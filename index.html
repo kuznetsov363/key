@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DentaCare - Современная стоматология</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-tooth"></i>
+                <span>DentaCare</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Главная</a></li>
+                <li><a href="#services" class="nav-link">Услуги</a></li>
+                <li><a href="#about" class="nav-link">О нас</a></li>
+                <li><a href="#team" class="nav-link">Команда</a></li>
+                <li><a href="#contact" class="nav-link">Контакты</a></li>
+                <li><a href="#appointment" class="nav-link btn-appointment">Записаться</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Здоровая улыбка - это просто!</h1>
+                <p>Современная стоматология с индивидуальным подходом к каждому пациенту. 
+                   Безболезненное лечение, новейшие технологии и гарантия качества.</p>
+                <div class="hero-buttons">
+                    <a href="#appointment" class="btn btn-primary">Записаться на прием</a>
+                    <a href="#services" class="btn btn-secondary">Наши услуги</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-card">
+                    <i class="fas fa-tooth hero-icon"></i>
+                    <h3>15+ лет опыта</h3>
+                    <p>Профессиональная стоматология</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Наши услуги</h2>
+                <p>Полный спектр стоматологических услуг с использованием современного оборудования</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3>Терапия</h3>
+                    <p>Лечение кариеса, пульпита, периодонтита. Современные пломбировочные материалы.</p>
+                    <ul>
+                        <li>Лечение кариеса</li>
+                        <li>Эндодонтия</li>
+                        <li>Художественная реставрация</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Хирургия</h3>
+                    <p>Удаление зубов, имплантация, костная пластика. Безболезненные операции.</p>
+                    <ul>
+                        <li>Удаление зубов</li>
+                        <li>Имплантация</li>
+                        <li>Костная пластика</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Ортопедия</h3>
+                    <p>Протезирование зубов, коронки, мосты, съемные и несъемные протезы.</p>
+                    <ul>
+                        <li>Коронки и мосты</li>
+                        <li>Съемные протезы</li>
+                        <li>Виниры</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-align-center"></i>
+                    </div>
+                    <h3>Ортодонтия</h3>
+                    <p>Исправление прикуса, брекет-системы, элайнеры для красивой улыбки.</p>
+                    <ul>
+                        <li>Брекет-системы</li>
+                        <li>Элайнеры</li>
+                        <li>Детская ортодонтия</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-sparkles"></i>
+                    </div>
+                    <h3>Отбеливание</h3>
+                    <p>Профессиональное отбеливание зубов, гигиена полости рта.</p>
+                    <ul>
+                        <li>Zoom отбеливание</li>
+                        <li>Домашнее отбеливание</li>
+                        <li>Профчистка зубов</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3>Детская стоматология</h3>
+                    <p>Специальный подход к лечению детей в комфортной атмосфере.</p>
+                    <ul>
+                        <li>Лечение молочных зубов</li>
+                        <li>Профилактика</li>
+                        <li>Игровая терапия</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>О нашей клинике</h2>
+                    <p>DentaCare - это современная стоматологическая клиника, которая уже более 15 лет заботится о здоровье и красоте улыбок наших пациентов.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Современное оборудование</h4>
+                                <p>Используем новейшие технологии и оборудование ведущих мировых производителей</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Безболезненное лечение</h4>
+                                <p>Применяем современные методы анестезии для комфортного лечения</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Гарантия качества</h4>
+                                <p>Предоставляем гарантию на все виды работ и используем только качественные материалы</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <div class="stat-number">5000+</div>
+                        <div class="stat-label">Довольных пациентов</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Лет опыта</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Специалистов</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">99%</div>
+                        <div class="stat-label">Положительных отзывов</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Наша команда</h2>
+                <p>Квалифицированные специалисты с многолетним опытом</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="doctor-image">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Иванова Елена Петровна</h3>
+                    <p class="position">Главный врач, стоматолог-терапевт</p>
+                    <p class="experience">Стаж: 20 лет</p>
+                    <p>Кандидат медицинских наук, специалист по эстетической стоматологии</p>
+                </div>
+                <div class="team-card">
+                    <div class="doctor-image">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Петров Александр Сергеевич</h3>
+                    <p class="position">Стоматолог-хирург, имплантолог</p>
+                    <p class="experience">Стаж: 15 лет</p>
+                    <p>Специалист по дентальной имплантации и костной пластике</p>
+                </div>
+                <div class="team-card">
+                    <div class="doctor-image">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Смирнова Мария Александровна</h3>
+                    <p class="position">Стоматолог-ортодонт</p>
+                    <p class="experience">Стаж: 12 лет</p>
+                    <p>Специалист по исправлению прикуса у детей и взрослых</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section id="appointment" class="appointment">
+        <div class="container">
+            <div class="appointment-content">
+                <div class="appointment-info">
+                    <h2>Записаться на прием</h2>
+                    <p>Оставьте заявку, и мы свяжемся с вами в ближайшее время для подтверждения записи</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Телефон</h4>
+                                <p>+7 (495) 123-45-67</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Режим работы</h4>
+                                <p>Пн-Пт: 9:00-21:00<br>Сб-Вс: 10:00-18:00</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Адрес</h4>
+                                <p>г. Москва, ул. Примерная, д. 123</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="appointment-form">
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Телефон" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value="">Выберите услугу</option>
+                                <option value="therapy">Терапия</option>
+                                <option value="surgery">Хирургия</option>
+                                <option value="orthopedics">Ортопедия</option>
+                                <option value="orthodontics">Ортодонтия</option>
+                                <option value="whitening">Отбеливание</option>
+                                <option value="children">Детская стоматология</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Дополнительная информация" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Контакты</h2>
+                <p>Мы всегда готовы ответить на ваши вопросы</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-details">
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Адрес клиники</h3>
+                        <p>г. Москва, ул. Примерная, д. 123<br>Метро "Примерная" (5 мин пешком)</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Телефоны</h3>
+                        <p>+7 (495) 123-45-67<br>+7 (495) 123-45-68</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>info@dentacare.ru<br>appointment@dentacare.ru</p>
+                    </div>
+                </div>
+                <div class="map-placeholder">
+                    <div class="map-content">
+                        <i class="fas fa-map"></i>
+                        <h3>Карта</h3>
+                        <p>Интерактивная карта с местоположением клиники</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-tooth"></i>
+                        <span>DentaCare</span>
+                    </div>
+                    <p>Современная стоматология с индивидуальным подходом к каждому пациенту.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vkontakte"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="#services">Терапия</a></li>
+                        <li><a href="#services">Хирургия</a></li>
+                        <li><a href="#services">Ортопедия</a></li>
+                        <li><a href="#services">Ортодонтия</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Информация</h3>
+                    <ul>
+                        <li><a href="#about">О клинике</a></li>
+                        <li><a href="#team">Специалисты</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                        <li><a href="#">Цены</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+                        <p><i class="fas fa-envelope"></i> info@dentacare.ru</p>
+                        <p><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Примерная, д. 123</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DentaCare. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
