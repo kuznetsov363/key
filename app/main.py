@@ -1,6 +1,6 @@
 import uvicorn
 from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from .database import Base, engine
@@ -28,6 +28,12 @@ def root_page():
             return f.read()
     except FileNotFoundError:
         return {"message": "Key Maker Bonus API is running. Swagger: /docs"}
+
+
+@app.get("/download")
+async def download_zip():
+    """Serve the project zip for download."""
+    return FileResponse(path="key_maker_bonus.zip", media_type="application/zip", filename="key_maker_bonus.zip")
 
 
 if __name__ == "__main__":
